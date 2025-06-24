@@ -6,6 +6,11 @@ using System.Web.Mvc;
 
 namespace CarInsurance2.Controllers
 {
+public ActionResult Admin()
+{
+    var quotes = db.Insurees.ToList();
+    return View(quotes);
+}
     public class HomeController : Controller
     {
         public ActionResult Index()
