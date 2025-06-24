@@ -1,3 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@Html.EditorFor(model => model.Quote)
+@Html.LabelFor(model => model.Quote)
+@Html.ValidationMessageFor(model => model.Quote)
