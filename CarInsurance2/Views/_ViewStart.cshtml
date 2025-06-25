@@ -4,3 +4,32 @@
 @Html.EditorFor(model => model.Quote)
 @Html.LabelFor(model => model.Quote)
 @Html.ValidationMessageFor(model => model.Quote)
+@model IEnumerable<YourProject.Models.Insuree>
+
+@{
+    ViewBag.Title = "Admin - All Quotes";
+}
+
+<h2>Admin Panel - All Quotes</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Quote ($)</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.EmailAddress</td>
+            <td>@item.Quote.ToString("F2")</td>
+        </tr>
+    }
+    </tbody>
+</table>
